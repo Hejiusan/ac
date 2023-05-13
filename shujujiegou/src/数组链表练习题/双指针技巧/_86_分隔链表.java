@@ -42,10 +42,10 @@ public class _86_分隔链表 {
                 }
                 // 断开原链表中的每个节点的 next 指针
                 // 这里不断掉会成环 Error - Found cycle in the ListNode
-//                ListNode temp = p.next;
-//                p.next = null;
-//                p = temp;
-                p=p.next;
+                ListNode temp = p.next;
+                p.next = null;
+                p = temp;
+//                p=p.next;
             }
             // 链接两个链表
             //为啥会成环，因为在链接两个链表的时候，p2中的节点2还保存了指向1的next指针，导致成环 所以我们需要在每保存一个节点的时候都需要断开原节点指向
