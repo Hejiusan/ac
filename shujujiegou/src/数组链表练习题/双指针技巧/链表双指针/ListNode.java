@@ -1,8 +1,8 @@
-package 数组链表练习题.双指针技巧;
+package 数组链表练习题.双指针技巧.链表双指针;
 
 public class ListNode {
-        int val;
-        ListNode next;
+        public int val;
+        public ListNode next;
 
         ListNode() {
         }

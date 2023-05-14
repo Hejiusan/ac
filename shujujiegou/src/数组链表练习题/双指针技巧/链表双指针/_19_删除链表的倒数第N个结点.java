@@ -1,4 +1,4 @@
-package 数组链表练习题.双指针技巧;
+package 数组链表练习题.双指针技巧.链表双指针;
 
 /**
  * https://leetcode.cn/problems/remove-nth-node-from-end-of-list/
