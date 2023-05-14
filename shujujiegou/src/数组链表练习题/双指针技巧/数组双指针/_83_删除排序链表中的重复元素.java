@@ -13,8 +13,8 @@ public class _83_删除排序链表中的重复元素 {
             if (head == null) return null;
             ListNode fast = head;
             ListNode slow = head;
-            while (fast!=null){
-                if (fast.val != slow.val){
+            while (fast != null) {
+                if (fast.val != slow.val) {
                     // nums[slow] = nums[fast];
                     slow.next = fast;
                     // slow++;
@@ -23,7 +23,7 @@ public class _83_删除排序链表中的重复元素 {
                 fast = fast.next;
             }
             //断开与后面重复元素的连接
-            slow.next=null;
+            slow.next = null;
             // fast、slow起的是指针的作用，修改了head这个链表，返回的还是原链表
             return head;
         }
