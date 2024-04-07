@@ -17,6 +17,11 @@ package 数组链表练习题.差分;
  * 预订记录 3 ：       25  25  25  25
  * 总座位数：      10  55  45  25  25
  * 因此，answer = [10,55,45,25,25]
+ *
+ *
+ *
+ * 给你输⼊⼀个⻓度为n的数组nums，其中所有元素都是 0。再给你输⼊⼀个bookings，⾥⾯是若⼲三元组(i, j, k)，
+ * 每个三元组的含义就是要求你给nums数组的闭区间[i-1,j-1]中所有元素都加上k。请你返回最后的nums数组是多少？
  */
 public class _1109_航班预订统计 {
     public int[] corpFlightBookings(int[][] bookings, int n) {
@@ -64,7 +69,7 @@ public class _1109_航班预订统计 {
         public int[] result() {
             int[] res = new int[diff.length];
             // 根据差分数组构造结果数组
-            res[0] = diff[0];
+            res[0] = diff[0];   // 默认都是0
             for (int i = 1; i < diff.length; i++) {
                 res[i] = res[i - 1] + diff[i];
             }

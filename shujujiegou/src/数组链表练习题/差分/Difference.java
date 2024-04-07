@@ -1,6 +1,11 @@
 package 数组链表练习题.差分;
 
-//
+/**
+ * 1、先定义一个查分数组 diff[]
+ * 2、构建差分方程 i - i-1
+ * 3、闭区间增减
+ * 4、有差分数组推出前缀和
+ */
 class Difference {
     //差分数组
     private int[] diff;
