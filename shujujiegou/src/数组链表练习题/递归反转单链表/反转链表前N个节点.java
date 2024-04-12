@@ -1,28 +1,13 @@
 package 数组链表练习题.递归反转单链表;
 
-/**
- * https://leetcode.cn/problems/reverse-linked-list-ii/description/?utm_source=LCUS&utm_medium=ip_redirect&utm_campaign=transfer2china
- *
- * 给你单链表的头指针 head 和两个整数 left 和 right ，
- * 其中 left <= right 。请你反转从位置 left 到位置 right 的链表节点，返回 反转后的链表 。
- */
-public class _92_反转链表II {
+public class 反转链表前N个节点 {
 
-    public ListNode reverseBetween(ListNode head, int left, int right) {
-        // base case
-        if (left==1){   //相当于反转前n个元素
-            return reverseN(head, right);
-        }
-        // 前进到反转的起点触发 base case
-        // head.next指向的链表进行翻转，相当于起点+1 也就是l和r都要-1
-        head.next = reverseBetween(head.next, left - 1, right - 1);
-        return head;
-    }
+    // 之前反转整个链表时，直接把 head.next 设置为 null，因为整个链表反转后原来的 head 变成了整个链表的最后一个节点。
+    // 但现在 head 节点在递归反转之后不一定是最后一个节点了，所以要记录后驱 successor（第 n + 1 个节点），反转之后将 head 连接上。
+    ListNode successor = null; // 后驱节点
 
-    ListNode successor = null;
-
+    // 反转以 head 为起点的 n 个节点，返回新的头结点 （n <= 链表长度）
     ListNode reverseN(ListNode head, int n) {
-
         if (n == 1) {   // 反转一个元素 就是本身
             // 记录第 n + 1 个节点
             successor = head.next;
@@ -38,6 +23,7 @@ public class _92_反转链表II {
         head.next = successor;
         return last;
     }
+
 
     public static class ListNode {
         int val;
