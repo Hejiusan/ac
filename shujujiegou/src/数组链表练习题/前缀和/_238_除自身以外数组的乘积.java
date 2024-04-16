@@ -22,7 +22,6 @@ public class _238_除自身以外数组的乘积 {
         int[] answer = new int[n];
 
 
-
         // 计算当前元素的前缀积
         preProduct_L.add(1);
         for (int i = 1; i < n; i++) {
