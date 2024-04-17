@@ -1,4 +1,4 @@
-package 数组链表练习题.双指针技巧.数组双指针.滑动窗口;
+package 数组链表练习题.双指针技巧.滑动窗口;
 
 import java.util.HashMap;
 import java.util.Map;
