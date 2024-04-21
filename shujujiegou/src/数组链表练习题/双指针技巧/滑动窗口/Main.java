@@ -13,8 +13,9 @@ public class Main {
         // 比如说，我想记录窗口中元素出现的次数，就用 map
         // 我想记录窗口中的元素和，就用 int
         Map<Character, Integer> window = new HashMap<>();
-        
+
         int left = 0, right = 0;
+        // 开始右扩，加入窗口
         while (right < s.length()) {
             // c 是将移入窗口的字符
             char c = s.charAt(right);
@@ -29,9 +30,9 @@ public class Main {
             // 因为 IO 操作很耗时，可能导致超时
             System.out.printf("window: [%d, %d)\n", left, right);
             /********************/
-            
+
             // 判断左侧窗口是否要收缩
-            while (left < right && window needs shrink) {
+            while (left < right && window needs shrink) {   // 这里的判断条件要根据问题来
                 // d 是将移出窗口的字符
                 char d = s.charAt(left);
                 window.put(d, window.get(d) - 1);
