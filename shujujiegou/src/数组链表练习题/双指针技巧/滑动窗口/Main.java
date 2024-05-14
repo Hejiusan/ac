@@ -32,15 +32,15 @@ public class Main {
             /********************/
 
             // 判断左侧窗口是否要收缩
-            while (left < right && window needs shrink) {   // 这里的判断条件要根据问题来
-                // d 是将移出窗口的字符
-                char d = s.charAt(left);
-                window.put(d, window.get(d) - 1);
-                // 缩小窗口
-                left++;
-                // 进行窗口内数据的一系列更新
-                // ...
-            }
+//            while (left < right && window needs shrink) {   // 这里的判断条件要根据问题来
+//                // d 是将移出窗口的字符
+//                char d = s.charAt(left);
+//                window.put(d, window.get(d) - 1);
+//                // 缩小窗口
+//                left++;
+//                // 进行窗口内数据的一系列更新
+//                // ...
+//            }
         }
     }
 

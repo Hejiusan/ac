@@ -28,14 +28,14 @@ public class 右边界点 {
      * @return
      */
     // 区间[l,r]被划分成[l, mid]和[mid+1, r]时使用
-    int bsearch_2(int l, int r)
-    {
-        while(l<r)
-        {
-            int mid = l + r >> 1;
-            if(check(mid))	r = mid;
-            else l = mid + 1;
-        }
-        retuen l;
-    }
+//    int bsearch_2(int l, int r)
+//    {
+//        while(l<r)
+//        {
+//            int mid = l + r >> 1;
+//            if(check(mid))	r = mid;
+//            else l = mid + 1;
+//        }
+//        retuen l;
+//    }
 }

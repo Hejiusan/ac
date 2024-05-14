@@ -38,17 +38,17 @@ public class 左边界点 {
      * @return
      */
     // 区间[l,r]被划分成[l, mid-1]和[mid, r]时使用
-    int binary_search_1(int l, int r)
-    {
-        while (l < r)//l,r分别是左右边界
-        {
-            int mid = l + r + 1 >> 1;//切记要加上1，防止死循环  >>1 表示右移一位 也就是➗2
-            //这里是根据下面这个l=mid还是l=mid+1决定的
-            //如果是l=mid 切记前面mid就一定要加上1（下面给出解释）
-            if (check(mid)) l = mid;
-            else r = mid - 1;
-        }//check函数其实是最重要的！！我会在题目中详细说明
-        return l;
-    }
+//    int binary_search_1(int l, int r)
+//    {
+//        while (l < r)//l,r分别是左右边界
+//        {
+//            int mid = l + r + 1 >> 1;//切记要加上1，防止死循环  >>1 表示右移一位 也就是➗2
+//            //这里是根据下面这个l=mid还是l=mid+1决定的
+//            //如果是l=mid 切记前面mid就一定要加上1（下面给出解释）
+//            if (check(mid)) l = mid;
+//            else r = mid - 1;
+//        }//check函数其实是最重要的！！我会在题目中详细说明
+//        return l;
+//    }
 
 }
