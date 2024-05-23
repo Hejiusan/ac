@@ -14,13 +14,21 @@ public class _1049_最后一块石头的重量II {
     // stones[]同时是物品的重量和价值
     public int lastStoneWeightII(int[] stones) {
         int n = stones.length;
+        int sum = 0;
+        for (int stone : stones) {
+            sum += stone;
+        }
+        int target = sum/2;     // 向下取整
         // dp[j]: 表示容量为j的背包所能容纳的最大重量
         int []dp = new int[3001];
         for (int i = 0; i < n; i++) {
-            for (int j = ; j < ; j++) {
-                
+            for (int j = target; j >= stones[i]; j--) {
+                dp[j] = Math.max(dp[j], dp[j-stones[i]] + stones[i]);
             }
         }
-
+        // dp[target]：容量为target的背包所能容纳的最大重量
+        // 分成了两堆重量接近的石头，那么另一堆石头的重量为 sum-dp[target]
+        // target是向下取整的 ==》 sum-dp[target] > dp[target]
+        return (sum - dp[target]) - dp[target]; // 两堆重量相近的石头相减，重量最小
     }
 }
