@@ -20,7 +20,7 @@ public class _77_组合 {
 
     private void backTraverse(int n, LinkedList<Integer> path, int start, int k) {
         if (path.size() == k){
-            res.add(new LinkedList(path));
+            res.add(new LinkedList<>(path));
             return;
         }
         for (int i = start; i <= n; i++) {  // 防止出现顺序不同的重复值 start来记录下一层递归，搜索的起始位置
