@@ -20,6 +20,8 @@ public class _377_组合总和Ⅳ {
         int[] dp = new int[target + 1];
         dp[0] = 1; // 凑成总和0的方法只有一种，不使用任何元素
 
+        // 题目是组合，但本质是求排列问题 意味着  1 1 2 和2 1 1 是不同的
+        // 所以要先遍历背包 在遍历物品
         for (int i = 0; i <= target; i++) {
             for (int j = 0; j < nums.length; j++) {
                 if (i >= nums[j]) {
@@ -27,6 +29,7 @@ public class _377_组合总和Ⅳ {
                 }
             }
         }
+
 
         return dp[target]; // 返回凑成目标总和target的组合数
     }

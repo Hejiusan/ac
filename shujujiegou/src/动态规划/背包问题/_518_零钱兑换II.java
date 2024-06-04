@@ -16,6 +16,7 @@ public class _518_零钱兑换II {
         // 转移方程：dp[j] += dp[j - coins[i]];
         int[] dp = new int[amount+1];
         dp[0] = 1;
+        // 这里本质是求组合问题，所以先遍历物品 在遍历背包
         for (int i = 0; i < coins.length; i++) { // 遍历物品
             for (int j = coins[i]; j <= amount; j++) { // 遍历背包
                 dp[j] += dp[j - coins[i]];
