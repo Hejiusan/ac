@@ -13,18 +13,18 @@ public class 遍历框架 {
     boolean[] onPath;   // 常用于判断图中是否有环
 
     /* 图遍历框架 */
-    void traverse(Graph graph, int s) {
-        if (visited[s]) return;
-        // 经过节点 s，标记为已遍历
-        visited[s] = true;
-        // 做选择：标记节点 s 在路径上
-        onPath[s] = true;
-        for (int neighbor : graph.neighbors(s)) {
-            traverse(graph, neighbor);
-        }
-        // 撤销选择：节点 s 离开路径
-        onPath[s] = false;
-    }
+//    void traverse(Graph graph, int s) {
+//        if (visited[s]) return;
+//        // 经过节点 s，标记为已遍历
+//        visited[s] = true;
+//        // 做选择：标记节点 s 在路径上
+//        onPath[s] = true;
+//        for (int neighbor : graph.neighbors(s)) {
+//            traverse(graph, neighbor);
+//        }
+//        // 撤销选择：节点 s 离开路径
+//        onPath[s] = false;
+//    }
 
 
 }
