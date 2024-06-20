@@ -19,9 +19,6 @@ public class _15_三数之和 {
      */
     public List<List<Integer>> threeSum(int[] nums) {
         Arrays.sort(nums);
-        // 求n数之和
-        // n 为 3，从 nums[0] 开始计算和为 0 的三元组
-//        return nSumTarget(nums, 3, 0, 0);
 
         List<List<Integer>> result = new ArrayList<>();
 
@@ -63,6 +60,9 @@ public class _15_三数之和 {
      * @param target
      * @return
      */
+    // 求n数之和
+    // n 为 3，从 nums[0] 开始计算和为 0 的三元组
+//        return nSumTarget(nums, 3, 0, 0);
     private List<List<Integer>> nSumTarget(int[] nums, int n, int start, int target) {
         int sz = nums.length;
         List<List<Integer>> res = new ArrayList<>();
