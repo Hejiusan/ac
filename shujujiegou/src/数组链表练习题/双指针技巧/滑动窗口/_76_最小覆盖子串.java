@@ -9,6 +9,9 @@ import java.util.Map;
  */
 public class _76_最小覆盖子串 {
     public String minWindow(String s, String t) {
+        if (s.length() < t.length()){
+            return "";
+        }
         // 用于记录需要的字符和窗口中的字符及其出现的次数
         Map<Character, Integer> need = new HashMap<>();
         Map<Character, Integer> window = new HashMap<>();
