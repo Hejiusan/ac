@@ -13,8 +13,28 @@ package hot100.链表;
 public class _142_环形链表II {
     /*
     我们假设快慢指针相遇时，慢指针 slow 走了 k 步，那么快指针 fast 一定走了 2k 步：
+    相遇代表有环，假设环的起点到相遇点的距离为m，那么从链表头结点到环的起点的距离就是 k-m
+    同时，相遇点继续往前走到环的起点的距离也是 k-m  因为fast多走的k步就是在环里转，环起点到相遇点距离为m，那么从相遇点走到环起点的距离就也是k-m
+    这意味着，将slow移动头结点，让他俩在走k-m步，他们一定会在环起点相遇
      */
     public ListNode detectCycle(ListNode head) {
-
+        ListNode slow = head, fast = head;
+        while (fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast)   break;  // 说明有环 且遇上了
+        }
+        // 也可能fast走到头了，说明没有环
+        //链表无环 返回null
+        if (fast == null || fast.next == null) {
+            // fast 遇到空指针说明没有环
+            return null;
+        }
+        slow = head;    // 将slow回到头结点，齐头并进在走k-m步
+        while (slow != fast){
+            slow = slow.next;
+            fast = fast.next;
+        }
+        return slow;
     }
 }

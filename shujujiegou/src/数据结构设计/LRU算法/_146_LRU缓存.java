@@ -19,6 +19,7 @@ import java.util.LinkedHashMap;
  * 3、每次访问 cache 中的某个 key，需要将这个元素变为最近使用的，也就是说 cache 要支持在任意位置快速插入和删除元素。
  *
  * 哈希链表 LinkedHashMap 双向链表和哈希表的结合体 完美满足
+ * 双向链表用于维护缓存的顺序，哈希表用于实现快速的查找。
  */
 public class _146_LRU缓存 {
     static class LRUCache {

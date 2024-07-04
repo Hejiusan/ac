@@ -4,16 +4,7 @@ package 数组链表练习题.双指针技巧.链表双指针;
  * https://leetcode.cn/problems/merge-two-sorted-lists/
  */
 public class _21_合并两个有序链表 {
-    /**
-     * Definition for singly-linked list.
-     * public class ListNode {
-     * int val;
-     * ListNode next;
-     * ListNode() {}
-     * ListNode(int val) { this.val = val; }
-     * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-     * }
-     */
+
     class Solution {
         public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
             // 虚拟头结点
