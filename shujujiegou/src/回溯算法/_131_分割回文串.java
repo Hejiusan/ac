@@ -21,6 +21,7 @@ public class _131_分割回文串 {
         // 结束条件
         if (start == s.length()){
             res.add(new LinkedList<>(path));
+            return;
         }
 
         for (int i = start; i < s.length(); i++) {
