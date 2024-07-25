@@ -2,6 +2,7 @@ package hot100.双指针;
 
 import java.util.Deque;
 import java.util.LinkedList;
+import java.util.Stack;
 
 /**
  * https://leetcode.cn/problems/trapping-rain-water/description/?envType=study-plan-v2&envId=top-100-liked
@@ -85,12 +86,26 @@ public class _42_接雨水 {
      * @param height
      * @return
      */
+    /*
+    单调栈存储的是下标，满足从栈底到栈顶的下标对应的数组 height 中的元素递减。
+    从左到右遍历数组，遍历到下标 i 时，如果栈内至少有两个元素，记栈顶元素为 top，top 的下面一个元素是 left，则一定有 height[left]≥height[top]。
+    如果 height[i]>height[top]，则得到一个可以接雨水的区域，
+    该区域的宽度是 i−left−1，高度是 min(height[left],height[i])−height[top]，根据宽度和高度即可计算得到该区域能接的雨水量。
+     */
     public int trap_stack(int[] height) {
         int ans = 0;
-        Deque<Integer> stack = new LinkedList<Integer>();
+        Stack<Integer> stack = new Stack<>();
         int n = height.length;
         for (int i = 0; i < n; ++i) {
+            // 当前遍历的格子比栈顶元素高，就存不了雨水，踢掉。
             while (!stack.isEmpty() && height[i] > height[stack.peek()]) {
+                // 遇到一个更高的，有落差了 计算可以存的雨水
+                /*
+                top 是凹槽底的索引，先弹出了top就可以取top这个格子的左边的第一个高的格子height[left];
+                找凹槽的左右两侧高
+                height[left]  和 新遇到的height[i] 来看谁更低 来计算面积
+                 */
+
                 int top = stack.pop();
                 if (stack.isEmpty()) {
                     break;
@@ -100,6 +115,7 @@ public class _42_接雨水 {
                 int currHeight = Math.min(height[left], height[i]) - height[top];
                 ans += currWidth * currHeight;
             }
+            // 只有小的时候才会产生凹陷，可以存雨水, 把索引入栈
             stack.push(i);
         }
         return ans;
