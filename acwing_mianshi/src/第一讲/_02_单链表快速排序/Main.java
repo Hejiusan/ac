@@ -1,4 +1,4 @@
-package _02_单链表快速排序;
+package 第一讲._02_单链表快速排序;
 
 class Main {
     public ListNode quickSortList(ListNode head) {

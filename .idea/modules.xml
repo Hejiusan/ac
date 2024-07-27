@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/acwing_mianshiti/_01/_01.iml" filepath="$PROJECT_DIR$/acwing_mianshiti/_01/_01.iml" />
       <module fileurl="file://$PROJECT_DIR$/ac.iml" filepath="$PROJECT_DIR$/ac.iml" />
-      <module fileurl="file://$PROJECT_DIR$/acwing_mianshiti/acwing_mianshiti.iml" filepath="$PROJECT_DIR$/acwing_mianshiti/acwing_mianshiti.iml" />
+      <module fileurl="file://$PROJECT_DIR$/acwing_mianshi/acwing_mianshi.iml" filepath="$PROJECT_DIR$/acwing_mianshi/acwing_mianshi.iml" />
       <module fileurl="file://$PROJECT_DIR$/leetcode/leetcode.iml" filepath="$PROJECT_DIR$/leetcode/leetcode.iml" />
       <module fileurl="file://$PROJECT_DIR$/lianshangshujujiegou/lianshangshujujiegou.iml" filepath="$PROJECT_DIR$/lianshangshujujiegou/lianshangshujujiegou.iml" />
       <module fileurl="file://$PROJECT_DIR$/shujujiegou/shujujiegou.iml" filepath="$PROJECT_DIR$/shujujiegou/shujujiegou.iml" />

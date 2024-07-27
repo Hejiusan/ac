@@ -1,3 +1,5 @@
+package 第一讲;
+
 import java.util.Scanner;
 
 /**

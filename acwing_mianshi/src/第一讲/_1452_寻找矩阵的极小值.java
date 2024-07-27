@@ -1,3 +1,5 @@
+package 第一讲;
+
 /**
  * https://www.acwing.com/problem/content/1454/
  * 给定一个 n×n的矩阵，矩阵中包含 n×n个 互不相同 的整数。
