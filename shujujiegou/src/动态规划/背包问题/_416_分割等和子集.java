@@ -20,7 +20,7 @@ public class _416_分割等和子集 {
         }
         if (sum % 2 == 1) return false;
         // dp[j]: 表示容量为j的背包，所能容纳的最大价值为 dp[j]
-        int []dp = new int[n];
+        int []dp = new int[10001];
         for (int i = 0; i < n; i++) {
             for (int j = sum/2; j >= nums[i]; j--) {
                 dp[j] = Math.max(dp[j], dp[j-nums[i]] + nums[i]);
