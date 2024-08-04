@@ -10,20 +10,21 @@ import java.util.Map;
  */
 public class _3_无重复字符的最长子串 {
     public int lengthOfLongestSubstring(String s) {
-        Map<Character, Integer> window = new HashMap<>();
-        int left = 0, right = 0;
+        Map<Character, Integer> map = new HashMap<>();
         int res = 0;
-        while (right < s.length()) {
+        int left = 0 , right = 0;
+        while (right < s.length()){
+            // 窗口移入一个字符串
             char c = s.charAt(right);
-            window.put(c, window.getOrDefault(c, 0) + 1);
             right++;
-            while (window.get(c) > 1) {  // 窗口存在重复值，收缩
-                // 最左侧值移出窗口  对应的出现次数也得减1
-                char left_s = s.charAt(left);
-                window.put(left_s, window.get(left_s) - 1);
+            map.put(c, map.getOrDefault(c, 0) + 1);
+            // 判断左侧是否要收缩窗口，如果加进来的字符串数量>1
+            while (map.get(c) > 1){
+                char d = s.charAt(left);
                 left++;
+                // 移出的字符数量也要-1
+                map.put(d, map.get(d) - 1);
             }
-            // 更新答案
             res = Math.max(res, right - left);
         }
         return res;

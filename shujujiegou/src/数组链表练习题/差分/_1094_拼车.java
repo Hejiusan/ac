@@ -30,6 +30,15 @@ public class _1094_拼车 {
     }
 
     class Difference {
+        /*
+        nums[0 ]= 0;
+        diff[1] = nums[1] - nums[0];
+        diff[2] = nums[2] - nums[1];
+        diff[3] =nums [3] - nums[2];
+        ........
+        diff[n] = nums[n] - nums[n-1];
+        累加可以得到 nums[n]=diff[1]+diff[2]+···+diff[n]
+         */
 
         //1、定义查分数组
         private int[] diff;
@@ -57,6 +66,7 @@ public class _1094_拼车 {
             // 初始化
             res[0] = diff[0];
             for (int i = 1; i < diff.length; i++) {
+                // 这里的res就是指的nums数组  因为有diff[n] = nums[n] - nums[n-1];，所以可以计算出res[i]
                 res[i] = diff[i] + res[i-1];
             }
             return res;
