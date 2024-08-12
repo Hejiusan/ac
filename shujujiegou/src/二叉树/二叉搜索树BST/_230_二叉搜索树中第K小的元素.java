@@ -20,12 +20,15 @@ public class _230_二叉搜索树中第K小的元素 {
         if (root == null){
             return;
         }
+        // 中序遍历 左
         traverse(root.left, k);
+        // 根
         rank++; // 当前元素所在位置
         if (k == rank){
             res = root.val;
             return;
         }
+        // 右
         traverse(root.right, k);
     }
 

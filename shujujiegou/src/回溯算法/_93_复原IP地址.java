@@ -14,6 +14,14 @@ import java.util.List;
  * 这些地址可以通过在 s 中插入 '.' 来形成。你 不能 重新排序或删除 s 中的任何数字。你可以按 任何 顺序返回答案。
  */
 public class _93_复原IP地址 {
+    /*
+    思路：
+    合法的ip地址 xx.xx.xx.xx == > 总共凑出四个子段  记录当前的ip字符串currentIP 从start = 0开始遍历  有4个点并且用到的字符全都用完了就 add
+    因为一个字段最多三位  遍历1~3 取出对应的字符子串，看是否合法
+    如果合法 就作为一个子串加进去currentIP + .
+    递归进去就是下一个字段开始 也就是当前start+i 作为新的start
+
+     */
     List<String> res = new ArrayList<>();
     public List<String> restoreIpAddresses(String s) {
         if (s.length() < 4 || s.length() > 12) {

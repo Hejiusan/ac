@@ -10,6 +10,12 @@ import java.util.List;
  * 你可以按 任何顺序 返回答案。
  */
 public class _77_组合 {
+    /*
+    思路：
+    从1开始遍历，防止用到重复的数，递归到下一层是 start + 1
+
+
+     */
     List<List<Integer>> res = new LinkedList<>();
 
     public List<List<Integer>> combine(int n, int k) {
