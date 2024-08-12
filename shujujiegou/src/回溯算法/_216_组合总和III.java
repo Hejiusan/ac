@@ -12,6 +12,12 @@ import java.util.List;
  * 返回 所有可能的有效组合的列表 。该列表不能包含相同的组合两次，组合可以以任何顺序返回。
  */
 public class _216_组合总和III {
+    /*
+    思路：
+        回溯算法，递归调用时记录start索引，第一次从1开始。之后严格从i+1开始，防止重复使用数字
+        因为只用到了数字 1~10 所以循环只需要 start ~10
+        当path的长度为k时，去判断里面的数之和是否为n，为n则res.add
+     */
     List<List<Integer>> res = new LinkedList<>();
     public List<List<Integer>> combinationSum3(int k, int n) {
         LinkedList<Integer> path = new LinkedList<>();

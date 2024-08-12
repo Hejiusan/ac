@@ -12,6 +12,10 @@ import java.util.List;
  * 每一种解法包含一个不同的 n 皇后问题 的棋子放置方案，该方案中 'Q' 和 '.' 分别代表了皇后和空位。
  */
 public class _51_N皇后 {
+    /*
+    思路：1、遍历棋盘的每一行
+    2、遍历当前行中的每一个元素,看在该位置上放皇后是否合法
+     */
     List<List<String>> res = new ArrayList<>();
     public List<List<String>> solveNQueens(int n) {
         // '.' 表示空，'Q' 表示皇后，初始化空棋盘。
@@ -56,7 +60,9 @@ public class _51_N皇后 {
         }
     }
 
-    /* 是否可以在 board[row][col] 放置皇后？*/
+    /* 是否可以在 board[row][col] 放置皇后？
+    *   这里只检测 左上方和右上方是因为 在最开始的遍历过程是从上往下遍历每一行。在判断该位置时，他的下方是还没有放元素的，所以不用考虑
+    * */
     private boolean isValid(List<String> board, int row, int col) {
         int n = board.size();
 
