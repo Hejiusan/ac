@@ -28,7 +28,7 @@ public class spfa {
         ● 在保存最短路径的数组中，就得到了最短路径。
      */
     static void spfa() {
-        Arrays.fill(dist, 0x3f3f3f3f);
+        Arrays.fill(dist, 0x3f3f3f3f);  // 初始化最短路径为极大值
         dist[1] = 0;//初始化第一个点到自身的距离
 
         q.offer(1); //1号点入队
