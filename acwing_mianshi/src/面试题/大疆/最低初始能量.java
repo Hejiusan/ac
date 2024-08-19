@@ -1,4 +1,4 @@
-package 遇到的面试题.大疆;
+package 面试题.大疆;
 
 import java.util.Scanner;
 
