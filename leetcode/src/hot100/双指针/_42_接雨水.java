@@ -39,7 +39,7 @@ public class _42_接雨水 {
         // 从右向左计算 r_max
         for (int i = n - 2; i >= 0; i--)
             r_max[i] = Math.max(height[i], r_max[i + 1]);
-        // 计算答案
+        // 计算答案 因为底的长度都是1 所以算每个小面积其实就是算高度的最短版
         for (int i = 1; i < n - 1; i++)
             res += Math.min(l_max[i], r_max[i]) - height[i];
         
